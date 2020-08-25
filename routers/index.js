@@ -20,7 +20,7 @@ router.route("/confirmation").get(confirmation);
 router.route("/contact").get(contact);
 router.route("/dashboard").get(dashboard);
 router.route("/faq").get(faq);
-router.route("/index").get(index);
+router.route("/").get(index);
 router.route("/invest").get(invest);
 router.route("/login").get(signin);
 router.route("/rules").get(rules);
