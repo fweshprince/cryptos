@@ -25,7 +25,7 @@ router.route("/index").get(index);
 router.route("/invest").get(invest);
 router.route("/login").get(signin);
 router.route("/rules").get(rules);
-router.route("/signup").get(signup);
+router.route("/sign-up").get(signup);
 router.route("/withdraw").get(withdraw);
 
 module.exports = router;
