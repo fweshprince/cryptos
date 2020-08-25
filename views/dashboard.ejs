@@ -211,6 +211,7 @@
           padding: 0;
           border: 10px solid #3a3864;
           margin-top: 5px;
+          margin-bottom: 5vh;
           min-height: 10vh;
         "
       >
@@ -251,7 +252,7 @@
 								<img src="assets/img/reason-icon2.svg" alt="images">
 							</div> -->
                   <div class="reasons-desc-div">
-                    <h4>Saving money for you Lorem ipsum dolor sit</h4>
+                    <h4>Saving money for you Lorem ipsum dolor sitting</h4>
                     <!-- <p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
                   </div>
                 </div>
@@ -289,6 +290,44 @@
           </div>
         </div>
       </div>
+      <!-- TradingView Widget BEGIN -->
+      <div
+        class="col-lg-12 col-md-12 col-sm-12 tradingview-widget-container"
+        style="margin: 30px 0px 10px 0px;"
+      >
+        <div id="tradingview_d2fd8"></div>
+        <div class="tradingview-widget-copyright">
+          <a
+            href="https://www.tradingview.com/symbols/NASDAQ-AAPL/"
+            rel="noopener"
+            target="_blank"
+            ><span class="blue-text">AAPL Chart</span></a
+          >
+          by TradingView
+        </div>
+        <script
+          type="text/javascript"
+          src="https://s3.tradingview.com/tv.js"
+        ></script>
+        <script type="text/javascript">
+          new TradingView.widget({
+            width: 980,
+            height: 610,
+            symbol: "NASDAQ:AAPL",
+            interval: "D",
+            timezone: "America/Toronto",
+            theme: "dark",
+            style: "1",
+            locale: "en",
+            toolbar_bg: "#f1f3f6",
+            enable_publishing: false,
+            allow_symbol_change: true,
+            studies: ["MF@tv-basicstudies"],
+            container_id: "tradingview_d2fd8",
+          });
+        </script>
+      </div>
+      <!-- TradingView Widget END -->
 
       <!--===================== Footer ========================-->
       <footer>
@@ -336,6 +375,7 @@
             </div>
           </div>
         </div>
+
         <!--===================== Copyright ========================-->
         <div class="copyright">
           <div class="container">

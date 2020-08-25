@@ -3,7 +3,7 @@
 exports.about = (req, res, next) => {
   res.render("about-us");
 };
-// @desc Render user actiive plans page
+// @desc Render user active plans page
 // @access private
 exports.activePlans = (req, res, next) => {
   res.render("activeplans");
