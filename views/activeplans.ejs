@@ -67,7 +67,7 @@
                   </li>
                   <!--top-sub-menu"-->
                   <li class="list-inline-item">
-                    <a href="login">Login<span>-</span></a>
+                    <a href="/api/v1/auth/logout">Logout<span>-</span></a>
                   </li>
                   <!-- <li class="list-inline-item"><a href="sign-up">Register<span>-</span></a></li> -->
                 </ul>
@@ -108,7 +108,7 @@
       >
         <div class="row reasons-block">
           <div class="col-xl-4 col-lg-4 col-12 animated bounceInLeft delay-250">
-            <h2 class="h2-main" style="color: cornsilk;">
+            <h2 class="h2-main" style="color: cornsilk">
               Welcome Rookiessssss
             </h2>
           </div>
@@ -129,13 +129,13 @@
                       <img src="assets/img/reason-icon1.svg" alt="images" />
                     </div>
                     <div class="reasons-desc-div">
-                      <h4 style="color: cornsilk;">My investments</h4>
+                      <h4 style="color: cornsilk">My investments</h4>
                     </div>
                   </div></a
                 >
               </div>
               <div class="col-sm-6 animated bounceInRight delay-250">
-                <a href="rules"
+                <a href="deposit"
                   ><div
                     class="reason-block-cont"
                     style="
@@ -149,7 +149,7 @@
                       <img src="assets/img/reason-icon2.svg" alt="images" />
                     </div>
                     <div class="reasons-desc-div">
-                      <h4 style="color: cornsilk;">Our rules</h4>
+                      <h4 style="color: cornsilk">Make a deposit</h4>
                       <!-- <p style="color: cornsilk;">Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
                     </div>
                   </div></a
@@ -170,7 +170,7 @@
                       <img src="assets/img/reason-icon3.svg" alt="images" />
                     </div>
                     <div class="reasons-desc-div">
-                      <h4 style="color: cornsilk;">Choose a plan</h4>
+                      <h4 style="color: cornsilk">Choose a plan</h4>
                       <!-- <p style="color: cornsilk;">Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
                     </div>
                   </div></a
@@ -191,7 +191,7 @@
                       <img src="assets/img/reason-icon4.svg" alt="images" />
                     </div>
                     <div class="reasons-desc-div">
-                      <h4 style="color: cornsilk;">Withdraw funds</h4>
+                      <h4 style="color: cornsilk">Withdraw funds</h4>
                       <!-- <p style="color: cornsilk;">Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
                     </div>
                   </div></a
@@ -214,7 +214,7 @@
           min-height: 10vh;
         "
       >
-        <div class="row reasons-block" style="padding: 0; margin: 0;">
+        <div class="row reasons-block" style="padding: 0; margin: 0">
           <!-- <div class="col-xl-4 col-lg-4 col-12 animated bounceInLeft delay-250">
 				<h2 class="h2-main">A few reasons why we might be  the right fet</h2>
 			</div> -->
@@ -228,7 +228,7 @@
                   margin-bottom: -50px;
                 "
               >
-                <div class="reason-block-cont" style="padding: 0;">
+                <div class="reason-block-cont" style="padding: 0">
                   <!-- <div class="reasons-icon-div">
 								<img src="assets/img/reason-icon1.svg" alt="images">
 							</div> -->
@@ -246,7 +246,7 @@
                   margin-bottom: -50px;
                 "
               >
-                <div class="reason-block-cont" style="padding: 0;">
+                <div class="reason-block-cont" style="padding: 0">
                   <!-- <div class="reasons-icon-div">
 								<img src="assets/img/reason-icon2.svg" alt="images">
 							</div> -->
@@ -264,7 +264,7 @@
                   margin-bottom: -50px;
                 "
               >
-                <div class="reason-block-cont" style="padding: 0;">
+                <div class="reason-block-cont" style="padding: 0">
                   <!-- <div class="reasons-icon-div">
 								<img src="assets/img/reason-icon3.svg" alt="images">
 							</div> -->
@@ -289,6 +289,89 @@
           </div>
         </div>
       </div>
+      <!-- TradingView Widget BEGIN -->
+      <div class="container" style="padding: 0px">
+        <div
+          class="col-lg-12 col-md-12 col-sm-12 tradingview-widget-container"
+          style="margin: 30px 0px 10px 0px"
+        >
+          <div class="tradingview-widget-container__widget"></div>
+          <div class="tradingview-widget-copyright">
+            <a
+              href="https://www.tradingview.com/markets/currencies/forex-cross-rates/"
+              rel="noopener"
+              target="_blank"
+              ><span class="blue-text">Forex Rates</span></a
+            >
+            by TradingView
+          </div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js"
+            async
+          >
+              {
+              "width": "100%",
+              "height": 400,
+              "currencies": [
+                "EUR",
+                "USD",
+                "JPY",
+                "GBP",
+                "CHF",
+                "AUD",
+                "CAD",
+                "NZD",
+                "CNY"
+              ],
+              "isTransparent": false,
+              "colorTheme": "dark",
+              "locale": "en"
+            }
+          </script>
+        </div>
+      </div>
+      <!-- TradingView Widget END -->
+      <!-- TradingView Widget BEGIN -->
+      <div class="container">
+        <div
+          class="col-lg-12 col-md-12 col-sm-12 tradingview-widget-container"
+          style="margin: 30px 0px 10px 0px"
+        >
+          <div id="tradingview_d2fd8"></div>
+          <div class="tradingview-widget-copyright">
+            <a
+              href="https://www.tradingview.com/symbols/NASDAQ-AAPL/"
+              rel="noopener"
+              target="_blank"
+              ><span class="blue-text">AAPL Chart</span></a
+            >
+            by TradingView
+          </div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: "100%",
+              height: 400,
+              symbol: "COINBASE:BTCUSD",
+              interval: "1",
+              timezone: "America/Toronto",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              allow_symbol_change: true,
+              studies: ["BB@tv-basicstudies"],
+              container_id: "tradingview_d2fd8",
+            });
+          </script>
+        </div>
+      </div>
+      <!-- TradingView Widget END -->
 
       <!--===================== Footer ========================-->
       <footer>

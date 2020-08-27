@@ -88,7 +88,8 @@
         <div class="row">
           <div class="col-xl-12 animated growIn">
             <!--===================== Custom Form ========================-->
-            <form class="custom-form">
+            <form class="custom-form" action="/api/v1/auth/login" method="post">
+              <%= message %>
               <h4>Login</h4>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email Address</label>
@@ -96,6 +97,8 @@
                   type="email"
                   class="form-control"
                   id="exampleInputEmail1"
+                  name="email"
+                  required
                 />
               </div>
               <div class="form-group last">
@@ -104,6 +107,8 @@
                   type="password"
                   class="form-control"
                   id="exampleInputEmail2"
+                  name="password"
+                  required
                 />
               </div>
               <div class="text-center">

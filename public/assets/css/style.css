@@ -147,7 +147,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
 }
 button:focus {
   outline: none;
@@ -160,9 +160,9 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 select::-ms-expand {
   display: none;
@@ -194,7 +194,7 @@ iframe {
 /* 01. Global Style
    ==================================== */
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   font-weight: 400;
 }
 h1 {
@@ -282,7 +282,9 @@ p {
 @font-face {
   font-family: "Myriad-Pro-Regular";
   src: url("../fonts/Myriad-Pro Regular.eot");
-  src: url("../fonts/Myriad-Pro Regular.ttf") format("truetype"), url("../fonts/Myriad-Pro Regular.woff") format("woff"), url("../fonts/Myriad-Pro Regular.otf") format("opentype");
+  src: url("../fonts/Myriad-Pro Regular.ttf") format("truetype"),
+    url("../fonts/Myriad-Pro Regular.woff") format("woff"),
+    url("../fonts/Myriad-Pro Regular.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -322,7 +324,7 @@ form.custom-form textarea {
 form.custom-form label {
   position: absolute;
   -ms-transform: translateY(9px);
-      transform: translateY(9px);
+  transform: translateY(9px);
   left: 0;
   transition: all 0.25s ease;
   backface-visibility: hidden;
@@ -334,7 +336,7 @@ form.custom-form label {
 }
 form.custom-form label.active {
   -ms-transform: translateY(-25px);
-      transform: translateY(-25px);
+  transform: translateY(-25px);
   left: 2px;
   font-size: 14px;
 }
@@ -437,18 +439,18 @@ header {
 }
 header .blue-brd-btn {
   margin-left: 13px;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   display: inline-block;
 }
 header .header-block {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 header .nav-menu a {
   color: #fff;
@@ -543,12 +545,12 @@ header .mobile-btn.active span {
 header .mobile-btn.active span:before {
   margin-top: 0;
   -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 header .mobile-btn.active span:after {
   margin-top: 0;
   -ms-transform: rotate(-45deg);
-      transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 header .mobile-btn span {
   margin: 0 auto;
@@ -558,7 +560,7 @@ header .mobile-btn span {
 }
 header .mobile-btn span:before,
 header .mobile-btn span:after {
-  content: '';
+  content: "";
   position: absolute;
   transition: 0.2s linear;
 }
@@ -639,7 +641,7 @@ header .mobile-btn span:after {
   border-radius: 100%;
   line-height: 93px;
   -ms-flex: 0 0 71px;
-      flex: 0 0 71px;
+  flex: 0 0 71px;
   text-align: center;
   display: inline-block;
   box-shadow: 3px 5px 15px 1px rgba(6, 180, 253, 0.13);
@@ -651,7 +653,7 @@ header .mobile-btn span:after {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   margin: 25px 0 72px 0;
 }
 /* 02. Philosophy Block
@@ -661,7 +663,7 @@ header .mobile-btn span:after {
 }
 .philosophy-block .philosophy-div1 {
   min-height: 405px;
-  background: url('../img/shutterstock.png') no-repeat;
+  background: url("../img/shutterstock.png") no-repeat;
   background-size: 77%;
   position: relative;
 }
@@ -728,7 +730,7 @@ header .mobile-btn span:after {
 .iphone-block {
   margin-bottom: 31px;
   padding: 148px 0 278px 0;
-  background: url('../img/iphone-background.png') no-repeat center;
+  background: url("../img/iphone-background.png") no-repeat center;
   background-size: cover;
 }
 .iphone-block .icon {
@@ -778,11 +780,11 @@ header .mobile-btn span:after {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   position: relative;
 }
 .live-currency .live-currency-div2 img {
@@ -794,7 +796,7 @@ header .mobile-btn span:after {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
 }
 .live-currency .live-currency-cont h4 {
   font-size: 18px;
@@ -812,7 +814,7 @@ header .mobile-btn span:after {
 .price-plan-block {
   margin-bottom: 60px;
   padding: 128px 0 234px 0;
-  background: url('../img/background-price-block.png') no-repeat center;
+  background: url("../img/background-price-block.png") no-repeat center;
   background-size: cover;
 }
 .price-plan-block .h2-main {
@@ -847,7 +849,7 @@ header .mobile-btn span:after {
 .price-plan-block .custom {
   padding-left: 0;
   -ms-flex: 0 0 24%;
-      flex: 0 0 24%;
+  flex: 0 0 24%;
   max-width: 24%;
   padding-right: 0;
 }
@@ -927,7 +929,7 @@ header .mobile-btn span:after {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
 }
 #news-owl-carousel .owl-dots .owl-dot {
   display: inline-block;
@@ -1039,7 +1041,7 @@ header .mobile-btn span:after {
 footer {
   padding-top: 210px;
   min-height: 565px;
-  background: url('../img/bg-footer.png') no-repeat;
+  background: url("../img/bg-footer.png") no-repeat;
   background-size: cover;
 }
 footer ul li {
@@ -1134,11 +1136,11 @@ footer .footer-social-wrapper {
   display: flex;
   padding-top: 156px;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
 }
 .courusel-container .main-slider-logo-block img {
   max-width: 140px;
@@ -1150,7 +1152,7 @@ footer .footer-social-wrapper {
   bottom: -25px;
   left: 50%;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
   position: absolute;
   display: inline-block;
   background-color: #20add0;
@@ -1173,7 +1175,7 @@ footer .footer-social-wrapper {
   background: #20add0;
   border: 2px solid #20add0;
   color: #fff;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
 }
 #sync1 .item .blue-brd-btn:hover,
 #sync1 .item .blue-brd-btn:active {
@@ -1205,10 +1207,10 @@ footer .footer-social-wrapper {
 .owl-carousel {
   cursor: url(../img/drag.png) 16 9, ew-resize;
 }
-.owl-theme .owl-nav [class*=owl-] {
+.owl-theme .owl-nav [class*="owl-"] {
   background: none;
 }
-.owl-theme .owl-nav [class*=owl-]:hover {
+.owl-theme .owl-nav [class*="owl-"]:hover {
   background: none;
 }
 #sync1.owl-theme {
@@ -1222,7 +1224,7 @@ footer .footer-social-wrapper {
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 #sync1.owl-theme .owl-prev {
   left: -77px;
@@ -1465,7 +1467,7 @@ footer .footer-social-wrapper {
   left: 50%;
   cursor: pointer;
   -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
+  transform: translateX(-50%);
   position: absolute;
 }
 .team-slider .slick-arrow.next {
@@ -1748,7 +1750,7 @@ footer .footer-social-wrapper {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   justify-content: space-between;
   -ms-flex-pack: space-between;
   -webkit-box-pack: justify;
@@ -1902,7 +1904,7 @@ aside a:hover {
 .post.list .last-news-info-wrap {
   padding: 1px 0 30px 0;
   -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
   min-height: 100%;
   background-color: transparent;
 }
@@ -1924,7 +1926,7 @@ aside a:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 .post.list .last-news-date img {
   margin-right: 5px;
@@ -2115,12 +2117,12 @@ blockquote p {
 .login-page .custom-form label,
 .sign-up .custom-form label {
   -ms-transform: translateY(6px);
-      transform: translateY(6px);
+  transform: translateY(6px);
 }
 .login-page .custom-form label.active,
 .sign-up .custom-form label.active {
   -ms-transform: translateY(-15px);
-      transform: translateY(-15px);
+  transform: translateY(-15px);
 }
 .login-page .custom-form .form-group,
 .sign-up .custom-form .form-group {
@@ -2215,7 +2217,7 @@ blockquote p {
 }
 .questions-page .custom-form label.active {
   -ms-transform: translateY(-20px);
-      transform: translateY(-20px);
+  transform: translateY(-20px);
 }
 .questions-page .custom-form .form-group {
   width: 197px;
@@ -2232,9 +2234,9 @@ blockquote p {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
 }
 .questions-page .text-head {
   margin-bottom: 70px;
@@ -2265,12 +2267,12 @@ blockquote p {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   white-space: normal;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
 }
 #accordion .accordion-header button svg {
   width: 47px;
@@ -2279,7 +2281,7 @@ blockquote p {
   right: 27px;
   top: 23px;
   -ms-transform: rotate(180deg);
-      transform: rotate(180deg);
+  transform: rotate(180deg);
   transition: 0.2s linear;
 }
 #accordion .accordion-header button svg path,
@@ -2288,7 +2290,7 @@ blockquote p {
 }
 #accordion .accordion-header button.collapsed svg {
   -ms-transform: rotate(0);
-      transform: rotate(0);
+  transform: rotate(0);
 }
 #accordion .accordion-header button:hover svg path,
 #accordion .accordion-header button:hover svg polygon {
@@ -2383,7 +2385,7 @@ blockquote p {
 .calculator .nav-pills {
   background-color: #f5f9fc;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
 }
 .calculator .nav-pills li a {
   color: #131149;
@@ -2560,7 +2562,7 @@ blockquote p {
   right: 16px;
   cursor: pointer;
   -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
+  transform: translateY(-50%);
   position: absolute;
 }
 .calculator form .select svg:hover path {
@@ -2593,7 +2595,7 @@ blockquote p {
   }
   .single-post .last-news-info-wrap {
     -ms-flex-align: center;
-        align-items: center;
+    align-items: center;
   }
   .single-post #news-owl-carousel .last-news-info-wrap {
     display: inline-block;

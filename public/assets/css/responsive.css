@@ -87,7 +87,7 @@
   }
   .about .first-section {
     max-height: 100%;
-    padding: 350px 0 197px ;
+    padding: 350px 0 197px;
   }
   .contact .first-section.not-images {
     max-height: 100%;
@@ -323,7 +323,7 @@
   }
   header,
   .header-type-2 {
-    padding: 25px 0;
+    padding: 9px 0;
   }
   header .header-block,
   .header-type-2 .header-block {
@@ -343,7 +343,7 @@
   header .mobile-btn,
   .header-type-2 .mobile-btn {
     position: absolute;
-    top: -40px;
+    top: -48px;
     right: 15px;
     display: inline-block;
   }
@@ -662,7 +662,7 @@
     float: left;
     text-align: center;
   }
-  .table-currency table tbody tr:nth-child(2n+1) {
+  .table-currency table tbody tr:nth-child(2n + 1) {
     clear: both;
   }
   .table-currency table tbody tr td {
@@ -953,7 +953,7 @@
     display: none;
   }
   .about .first-section {
-    padding: 120px 0 0 ;
+    padding: 120px 0 0;
   }
   .about .first-section .text {
     text-align: center;

@@ -28,6 +28,11 @@ exports.invest = (req, res, next) => {
 exports.withdraw = (req, res, next) => {
   res.render("withdraw");
 };
+// @desc Render make deposit page
+// @access private
+exports.deposit = (req, res, next) => {
+  res.render("deposit");
+};
 // @desc Render contact us page
 // @access public
 exports.contact = (req, res, next) => {
@@ -46,7 +51,7 @@ exports.index = (req, res, next) => {
 // @desc Render signin page
 // @access public
 exports.signin = (req, res, next) => {
-  res.render("login");
+  res.render("login", { message: "" });
 };
 // @desc Render rules page
 // @access public
@@ -56,5 +61,5 @@ exports.rules = (req, res, next) => {
 // @desc Render signup page
 // @access public
 exports.signup = (req, res, next) => {
-  res.render("sign-up");
+  res.render("sign-up", { message: "" });
 };

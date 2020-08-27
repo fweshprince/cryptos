@@ -12,6 +12,7 @@ const {
   signup,
   rules,
   withdraw,
+  deposit,
 } = require("../controllers/index");
 
 router.route("/").get(index);
@@ -20,6 +21,7 @@ router.route("/about-us").get(about);
 router.route("/activePlans").get(activePlans);
 router.route("/confirmation").get(confirmation);
 router.route("/contact").get(contact);
+router.route("/deposit").get(deposit);
 router.route("/dashboard").get(dashboard);
 router.route("/faq").get(faq);
 router.route("/invest").get(invest);
