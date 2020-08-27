@@ -109,7 +109,7 @@
         <div class="row reasons-block">
           <div class="col-xl-4 col-lg-4 col-12 animated bounceInLeft delay-250">
             <h2 class="h2-main" style="color: cornsilk">
-              Welcome Rookiessssss
+              Welcome <%= `${user.firstName}` %>
             </h2>
           </div>
           <div class="col-xl-8 col-lg-8 col-12">
@@ -230,10 +230,10 @@
               >
                 <div class="reason-block-cont" style="padding: 0">
                   <!-- <div class="reasons-icon-div">
-								<img src="assets/img/reason-icon1.svg" alt="images">
-							</div> -->
+        <img src="assets/img/reason-icon1.svg" alt="images">
+      </div> -->
                   <div class="reasons-desc-div">
-                    <h4>Money is in your bank account in 2 hours</h4>
+                    <h4>Deposited: <%= `$${user.deposits}` %></h4>
                     <!-- <p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
                   </div>
                 </div>
@@ -248,10 +248,10 @@
               >
                 <div class="reason-block-cont" style="padding: 0">
                   <!-- <div class="reasons-icon-div">
-								<img src="assets/img/reason-icon2.svg" alt="images">
-							</div> -->
+        <img src="assets/img/reason-icon2.svg" alt="images">
+      </div> -->
                   <div class="reasons-desc-div">
-                    <h4>Saving money for you Lorem ipsum dolor sit</h4>
+                    <h4>Profit: <%= `$${user.profit}` %></h4>
                     <!-- <p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
                   </div>
                 </div>
@@ -266,10 +266,10 @@
               >
                 <div class="reason-block-cont" style="padding: 0">
                   <!-- <div class="reasons-icon-div">
-								<img src="assets/img/reason-icon3.svg" alt="images">
-							</div> -->
+        <img src="assets/img/reason-icon3.svg" alt="images">
+      </div> -->
                   <div class="reasons-desc-div">
-                    <h4>Money is in your bank account in 2 hours</h4>
+                    <h4>Ref Bonus: <%= `$${user.refBonus}` %></h4>
                     <!-- <p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
                   </div>
                 </div>
@@ -277,10 +277,10 @@
               <div class="col-sm-3 animated bounceInRight delay-500">
                 <div class="reason-block-cont">
                   <!-- <div class="reasons-icon-div">
-								<img src="assets/img/reason-icon4.svg" alt="images">
-							</div> -->
+        <img src="assets/img/reason-icon4.svg" alt="images">
+      </div> -->
                   <div class="reasons-desc-div">
-                    <h4>Money is in your bank account in 2 hours</h4>
+                    <h4>Balance: <%= `$${user.balance}` %></h4>
                     <!-- <p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
                   </div>
                 </div>
