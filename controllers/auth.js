@@ -22,6 +22,26 @@ exports.showlogin = asyncHandler(async (req, res, next) => {
 exports.showsignup = asyncHandler(async (req, res, next) => {
   res.render("sign-up", { message: "" });
 });
+// @desc Renders index page
+// @access public
+exports.showindex = asyncHandler(async (req, res, next) => {
+  res.render("index", { message: "" });
+});
+// @desc Renders about page
+// @access public
+exports.showabout = asyncHandler(async (req, res, next) => {
+  res.render("about-us", { message: "" });
+});
+// @desc Renders contact page
+// @access public
+exports.showcontact = asyncHandler(async (req, res, next) => {
+  res.render("contact", { message: "" });
+});
+// @desc Renders faq page
+// @access public
+exports.showfaq = asyncHandler(async (req, res, next) => {
+  res.render("faq", { message: "" });
+});
 
 // @desc Registers a user
 // @access public
