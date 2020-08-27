@@ -343,7 +343,7 @@
   header .mobile-btn,
   .header-type-2 .mobile-btn {
     position: absolute;
-    top: -48px;
+    top: -56px;
     right: 15px;
     display: inline-block;
   }

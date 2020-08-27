@@ -516,7 +516,7 @@ header .nav-menu .sub-menu li:not(:last-child) {
   margin-bottom: 17px;
 }
 header .logo {
-  max-width: 208px;
+  max-width: 100px;
 }
 header .logo-fixed {
   display: none;
