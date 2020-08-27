@@ -52,6 +52,10 @@ const UserSchema = new Schema(
       type: Number,
       default: 0,
     },
+    refBonus: {
+      type: Number,
+      default: 0,
+    },
     email: {
       type: String,
       required: [true, "Please input a valid email"],
