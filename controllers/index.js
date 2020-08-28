@@ -78,7 +78,8 @@ exports.signup = (req, res, next) => {
 // @access public
 exports.userinvest = asyncHandler(async (req, res, next) => {
   const obj = { ...req.body, user: req.user._id.toString() };
-  const user = User.findById(req.user._id.toString());
+  const user = await User.findById(req.user._id.toString());
+  console.log(user);
   user.balance = user.balance - req.body.amountInvested;
   await user.save();
   await Investment.create(obj);

@@ -72,8 +72,10 @@ const UserSchema = new Schema(
 
 // add middleware to hash passwords
 UserSchema.pre("save", async function (next) {
-  const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
+  if (this.password) {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+  }
   next();
 });
 // generate jsonwebtoken
