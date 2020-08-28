@@ -1,25 +1,33 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
-const DepositSchema = new Schema({
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const DepositSchema = new Schema(
+  {
     user: {
-        type: mongoose.Schema.ObjectId,
-        ref: "User"
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
     },
     amount: {
-        type: Number
+      type: Number,
     },
     status: {
-        type: String,
-        default: pending,
-        enum: ['pending', 'processed']
+      type: String,
+      default: "pending",
+      enum: ["pending", "processed"],
     },
     paymentMode: {
-        type: String
+      type: String,
+      default: "Bitcoin",
     },
-}, 
-{timestamps: true}
-)
+    imagePath: {
+      type: String,
+    },
+    publicId: {
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
 
-const Deposit = mongoose.model("Deposit", DepositSchema)
+const Deposit = mongoose.model("Deposit", DepositSchema);
 
-module.exports = Deposit
+module.exports = Deposit;
