@@ -1,25 +1,30 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
-const InvestmentSchema = new Schema({
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const InvestmentSchema = new Schema(
+  {
     user: {
-        type: mongoose.Schema.ObjectId,
-        ref: "User"
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
     },
     tier: {
-        type: String,
-        enum: ["gold", "silver", "bronze"]
+      type: String,
+      enum: ["Gold", "Silver", "Diamond"],
+    },
+    duration: {
+      type: String,
+      default: "One week",
     },
     amountInvested: {
-        type: Number
+      type: Number,
     },
-    isVerified: {
-        type: Boolean,
-        default: false
-    }
-}, 
-{timestamps: true}
-)
+    status: {
+      type: Boolean,
+      default: "Active",
+    },
+  },
+  { timestamps: true }
+);
 
-const Investment = mongoose.model("Investment", InvestmentSchema)
+const Investment = mongoose.model("Investment", InvestmentSchema);
 
-module.exports = Investment
+module.exports = Investment;

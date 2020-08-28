@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Dashboard</title>
+    <title>Portfolio</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1.5"
@@ -129,7 +129,7 @@
                       <img src="assets/img/reason-icon1.svg" alt="images" />
                     </div>
                     <div class="reasons-desc-div">
-                      <h4 style="color: cornsilk">My investments</h4>
+                      <h4 style="color: cornsilk">My portfolio</h4>
                     </div>
                   </div></a
                 >
@@ -289,6 +289,88 @@
           </div>
         </div>
       </div>
+      <div
+        class="container-fluid animatedParent"
+        style="
+          background-color: #3a3864;
+          border-radius: 10px;
+          width: 90%;
+          padding: 10px;
+          margin: 20px auto;
+        "
+      >
+        <h3>Deposits</h3>
+        <% if(deposits.length > 0) { %>
+        <table id="table">
+          <thead>
+            <tr>
+              <td><b class="name">Amount</b></td>
+              <td><b class="name">Payment mode</b></td>
+              <td><b class="name">Status</b></td>
+              <td><b class="name">Date made</b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <% deposits.forEach((deposit)=>{ %>
+            <tr>
+              <td><b><%=`$${deposit.amount}`%></b></td>
+              <td><%=`${deposit.paymentMode}`%></td>
+              <td><%=`${deposit.status}`%></td>
+              <td><%= deposit.createdAt.toString().slice(0,15) %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <% } else { %>
+        <div style="background-color: cornsilk">
+          <h4>No deposits made yet</h4>
+          <a href="deposit">Fund account now</a>
+        </div>
+        <% } %>
+      </div>
+      <div
+        class="container-fluid animatedParent"
+        style="
+          background-color: #3a3864;
+          border-radius: 10px;
+          width: 90%;
+          padding: 10px;
+          margin: 20px auto;
+        "
+      >
+        <h3>Deposits</h3>
+        <% if(investments.length > 0) { %>
+        <table id="table">
+          <thead>
+            <tr>
+              <td><b class="name">Name</b></td>
+              <td><b class="name">amount</b></td>
+              <td><b class="name">Status</b></td>
+              <td><b class="name">Duration</b></td>
+              <td><b class="name">Activation date</b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <% investments.forEach((investment)=>{ %>
+            <tr>
+              <td><b><%=`${investment.tier}`%></b></td>
+              <td><%=`$${investment.amountInvested}`%></td>
+              <td><%=`${investment.status}`%></td>
+              <td><%=`${investment.duration}`%></td>
+              <td><%= investment.createdAt.toString().slice(0,15) %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <% } else { %>
+        <div style="background-color: cornsilk">
+          <h4>No active investmentsyet</h4>
+          <a href="deposit">Fund account now</a
+          ><span>to purchase a plan and start earning</span>
+        </div>
+        <% } %>
+      </div>
+
       <!-- TradingView Widget BEGIN -->
       <div class="container" style="padding: 0px">
         <div
@@ -372,7 +454,19 @@
         </div>
       </div>
       <!-- TradingView Widget END -->
-
+      <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+          Tawk_LoadStart = new Date();
+        (function () {
+          var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+          s1.async = true;
+          s1.src = "https://embed.tawk.to/5f47cafe1e7ade5df44475d2/default";
+          s1.charset = "UTF-8";
+          s1.setAttribute("crossorigin", "*");
+          s0.parentNode.insertBefore(s1, s0);
+        })();
+      </script>
       <!--===================== Footer ========================-->
       <footer>
         <div class="container">

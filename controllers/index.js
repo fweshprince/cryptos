@@ -1,6 +1,7 @@
 const asyncHandler = require("../middleware/async");
 const { cloudinary, upload } = require("../utils/cloudinary");
 const Deposit = require("../models/Deposit");
+const Investment = require("../models/Investment");
 // @desc Render about page
 // @access public
 exports.about = (req, res, next) => {
@@ -8,9 +9,15 @@ exports.about = (req, res, next) => {
 };
 // @desc Render user active plans page
 // @access private
-exports.activePlans = (req, res, next) => {
-  res.render("activeplans");
-};
+exports.activePlans = asyncHandler(async (req, res, next) => {
+  const userId = req.user._id.toString();
+  const allDeposits = await Deposit.find({ user: userId });
+  const allInvestments = await Investment.find({ user: userId });
+  res.render("activeplans", {
+    deposits: allDeposits,
+    investments: allInvestments,
+  });
+});
 // @desc Render payment confirmation page
 // @access private
 exports.confirmation = (req, res, next) => {
@@ -66,13 +73,10 @@ exports.rules = (req, res, next) => {
 exports.signup = (req, res, next) => {
   res.render("sign-up", { message: "" });
 };
-// @desc User upload deposit proof
+// @desc User make an investment
 // @access public
-exports.btcdeposit = asyncHandler(async (req, res, next) => {
-  const result = await cloudinary.uploader.upload(req.file.path);
-  const obj = {
-    ...req.body,
-    imagePath: result.secure_url,
-    publicId: result.public_id,
-  };
+exports.userinvest = asyncHandler(async (req, res, next) => {
+  const obj = { ...req.body, user: req.user._id.toString() };
+  await Investment.create(obj);
+  return res.redirect("/activePlans");
 });

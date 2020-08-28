@@ -13,6 +13,7 @@ const {
   rules,
   withdraw,
   deposit,
+  userinvest,
 } = require("../controllers/index");
 const cloudinary = require("cloudinary");
 const multer = require("multer");
@@ -53,6 +54,7 @@ router.route("/login").get(signin);
 router.route("/rules").get(rules);
 router.route("/sign-up").get(signup);
 router.route("/withdraw").get(withdraw);
+router.route("/invest").post(userinvest);
 router.post("/deposit", upload.single("image"), async (req, res, next) => {
   const result = await cloudinary.uploader.upload(req.file.path);
   const obj = {
@@ -61,7 +63,7 @@ router.post("/deposit", upload.single("image"), async (req, res, next) => {
     publicId: result.public_id,
   };
   await Deposit.create(obj);
-  return res.redirect("/dashboard");
+  return res.redirect("/activePlans");
 });
 
 module.exports = router;

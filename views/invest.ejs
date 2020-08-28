@@ -314,7 +314,51 @@
                 <p class="price-plan-text-2">
                   Min/Max amount: <br />$100 - $999
                 </p>
-                <a href="confirmation" class="see-brd-btn">Invest</a>
+                <form action="/invest" method="POST">
+                  <input
+                    type="number"
+                    class="form-control"
+                    style="max-width: 200px; margin: 10px auto"
+                    placeholder="Input amount to invest"
+                    id="amountInput"
+                    name="amountInvested"
+                    min="100"
+                    max="999"
+                  />
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="display: none; margin: 10px"
+                    id="amountInput"
+                    value="<%= `${user._id}` %>"
+                    name="user"
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="display: none; margin: 10px"
+                    id="amountInput"
+                    value="<%= `${user.balance}` %>"
+                    name="userBalance"
+                  />
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="display: none; margin: 10px"
+                    id="amountInput"
+                    value="Silver"
+                    name="tier"
+                  />
+
+                  <input
+                    style="margin: 10px; border: none"
+                    class="see-brd-btn"
+                    type="submit"
+                    value="Invest"
+                  />
+                </form>
               </div>
             </div>
             <div
@@ -333,7 +377,52 @@
                 <p class="price-plan-text-2">
                   Min/Max amount: <br />$1000 - $4999
                 </p>
-                <a href="confirmation" class="see-brd-btn">Invest</a>
+                <form action="/invest" method="POST">
+                  <input
+                    type="number"
+                    class="form-control"
+                    style="max-width: 200px; margin: 10px auto"
+                    placeholder="Input amount to invest"
+                    id="amountInput"
+                    name="amountInvested"
+                    min="1000"
+                    max="4999"
+                  />
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="display: none; margin: 10px"
+                    id="amountInput"
+                    value="<%= `${user._id}` %>"
+                    name="user"
+                  />
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="display: none; margin: 10px"
+                    id="amountInput"
+                    value="Gold"
+                    name="tier"
+                  />
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="display: none; margin: 10px"
+                    id="amountInput"
+                    value="<%= `${user.balance}` %>"
+                    name="userBalance"
+                  />
+
+                  <input
+                    style="margin: 10px; border: none"
+                    class="see-brd-btn"
+                    type="submit"
+                    value="Invest"
+                  />
+                </form>
               </div>
             </div>
             <div
@@ -352,7 +441,52 @@
                 <p class="price-plan-text-2">
                   Min/Max amount: <br />$5000 - $1,000,000
                 </p>
-                <a href="confirmation" class="see-brd-btn">Invest</a>
+                <form action="/invest" method="POST">
+                  <input
+                    type="number"
+                    class="form-control"
+                    style="max-width: 200px; margin: 10px auto"
+                    placeholder="Input amount to invest"
+                    id="amountInput"
+                    name="amountInvested"
+                    min="5000"
+                    max="1000000"
+                  />
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="display: none; margin: 10px"
+                    id="amountInput"
+                    value="<%= `${user._id}` %>"
+                    name="user"
+                  />
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="display: none; margin: 10px"
+                    id="amountInput"
+                    value="Diamond"
+                    name="tier"
+                  />
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="display: none; margin: 10px"
+                    id="amountInput"
+                    value="<%= user.balance %>"
+                    name="userBalance"
+                  />
+
+                  <input
+                    style="margin: 10px; border: none"
+                    class="see-brd-btn"
+                    type="submit"
+                    value="Invest"
+                  />
+                </form>
               </div>
             </div>
           </div>
@@ -517,5 +651,18 @@
     <script src="assets/js/lib/slick.min.js"></script>
     <script src="assets/js/lib/css3-animate-it.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      let allForms = document.forms;
+      for (let i = 0; i < allForms.length; i++) {
+        allForms[i].addEventListener("submit", (e) => {
+          let value = parseInt(allForms[i].amountInvested.value);
+          let userBalance = parseInt(allForms[i].userBalance.value);
+          if (value > userBalance) {
+            alert(typeof userBalance);
+            e.preventDefault();
+          }
+        });
+      }
+    </script>
   </body>
 </html>
