@@ -77,6 +77,7 @@ exports.signup = (req, res, next) => {
 // @access public
 exports.userinvest = asyncHandler(async (req, res, next) => {
   const obj = { ...req.body, user: req.user._id.toString() };
+  console.log(obj);
   await Investment.create(obj);
   return res.redirect("/activePlans");
 });

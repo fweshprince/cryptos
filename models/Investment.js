@@ -18,7 +18,7 @@ const InvestmentSchema = new Schema(
       type: Number,
     },
     status: {
-      type: Boolean,
+      type: String,
       default: "Active",
     },
   },

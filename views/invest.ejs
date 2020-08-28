@@ -658,7 +658,7 @@
           let value = parseInt(allForms[i].amountInvested.value);
           let userBalance = parseInt(allForms[i].userBalance.value);
           if (value > userBalance) {
-            alert(typeof userBalance);
+            alert("Sorry, user balance is not sufficient");
             e.preventDefault();
           }
         });
