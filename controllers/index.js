@@ -2,6 +2,7 @@ const asyncHandler = require("../middleware/async");
 const { cloudinary, upload } = require("../utils/cloudinary");
 const Deposit = require("../models/Deposit");
 const Investment = require("../models/Investment");
+const User = require("../models/User");
 // @desc Render about page
 // @access public
 exports.about = (req, res, next) => {
@@ -77,7 +78,9 @@ exports.signup = (req, res, next) => {
 // @access public
 exports.userinvest = asyncHandler(async (req, res, next) => {
   const obj = { ...req.body, user: req.user._id.toString() };
-  console.log(obj);
+  const user = User.findById(req.user._id.toString());
+  user.balance = user.balance - req.body.amountInvested;
+  await user.save();
   await Investment.create(obj);
   return res.redirect("/activePlans");
 });
