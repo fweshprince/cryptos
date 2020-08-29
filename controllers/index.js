@@ -1,7 +1,8 @@
 const asyncHandler = require("../middleware/async");
-const { cloudinary, upload } = require("../utils/cloudinary");
+// const { cloudinary, upload } = require("../utils/cloudinary");
 const Deposit = require("../models/Deposit");
 const Investment = require("../models/Investment");
+const Kycupload = require("../models/Kyc");
 const User = require("../models/User");
 // @desc Render about page
 // @access public
@@ -21,29 +22,37 @@ exports.activePlans = asyncHandler(async (req, res, next) => {
 });
 // @desc Render payment confirmation page
 // @access private
-exports.confirmation = (req, res, next) => {
-  res.render("confirmation");
-};
+exports.confirmation = asyncHandler(async (req, res, next) => {
+  const userId = req.user._id.toString();
+  const allKycuploads = await Kycupload.find({ user: userId });
+  res.render("confirmation", {
+    kycuploads: allKycuploads,
+  });
+});
 // @desc Render user dashboard page
 // @access private
-exports.dashboard = (req, res, next) => {
-  res.render("dashboard");
-};
+exports.dashboard = asyncHandler(async (req, res, next) => {
+  const userId = req.user._id.toString();
+  const allInvestments = await Investment.find({ user: userId });
+  res.render("dashboard", {
+    investments: allInvestments,
+  });
+});
 // @desc Render invest page
 // @access private
-exports.invest = (req, res, next) => {
+exports.invest = asyncHandler((req, res, next) => {
   res.render("invest");
-};
+});
 // @desc Render make withdrawal page
 // @access private
-exports.withdraw = (req, res, next) => {
+exports.withdraw = asyncHandler((req, res, next) => {
   res.render("withdraw");
-};
+});
 // @desc Render make deposit page
 // @access private
-exports.deposit = (req, res, next) => {
+exports.deposit = asyncHandler((req, res, next) => {
   res.render("deposit");
-};
+});
 // @desc Render contact us page
 // @access public
 exports.contact = (req, res, next) => {

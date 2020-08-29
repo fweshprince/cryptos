@@ -88,15 +88,38 @@
       <div class="container margin-bottom-list">
         <div class="row animatedParent">
           <div class="col-xl-9 col-lg-9 col-12 animated bounceInLeft">
-            <p>Telegram</p>
-            <p>Phone</p>
-            <p>""</p>
-            <p>Phone: +16474956063</p>
-            <p>Email: info@crypto-hasher.com</p>
+            <div>
+              <p style="color: white">Telegram</p>
+              <p style="color: white">Phone</p>
+              <p style="color: white">Email</p>
+            </div>
+            <p><strong>Phone: +1 647 495 6063</strong></p>
+            <p><strong>Email: support@capitalreturnsinc.com</strong></p>
           </div>
         </div>
       </div>
-
+      <% if(user.isVerified == false) { %>
+      <div
+        class="container-fluid animatedParent"
+        style="
+          background-color: #fbbaba;
+          border-radius: 15px;
+          width: 90%;
+          padding: 5px 0px 5px 1px;
+          border: 10px solid #ff1919;
+          min-height: 10vh;
+          margin-bottom: 10px;
+        "
+      >
+        <p>
+          <strong>
+            Thank you for registering. Please
+            <a href="confirmation">Upload a valid ID</a> to confirm your
+            account.
+          </strong>
+        </p>
+      </div>
+      <% } %>
       <div
         class="container-fluid animatedParent"
         style="
@@ -291,7 +314,7 @@
         </div>
       </div>
       <!-- TradingView Widget BEGIN -->
-      <div class="container" style="padding: 0px">
+      <!-- <div class="container" style="padding: 0px">
         <div
           class="col-lg-12 col-md-12 col-sm-12 tradingview-widget-container"
           style="margin: 30px 0px 10px 0px"
@@ -331,10 +354,10 @@
             }
           </script>
         </div>
-      </div>
+      </div> -->
       <!-- TradingView Widget END -->
       <!-- TradingView Widget BEGIN -->
-      <div class="container">
+      <!-- <div class="container">
         <div
           class="col-lg-12 col-md-12 col-sm-12 tradingview-widget-container"
           style="margin: 30px 0px 10px 0px"
@@ -371,8 +394,92 @@
             });
           </script>
         </div>
+      </div> -->
+      <% if(investments.length > 0) { %>
+      <div class="container">
+        <div
+          class="tradingview-widget-container"
+          style="margin: 30px 0px 10px 0px"
+        >
+          <div id="tradingview_f933e"></div>
+          <div class="tradingview-widget-copyright">
+            <a href="#" rel="noopener" target="_blank"
+              ><span class="blue-text"></span>
+              <span class="blue-text">Personal trading chart</span></a
+            >
+          </div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              width: "100%",
+              height: 610,
+              symbol: "FX:EURUSD",
+              interval: "1",
+              timezone: "Etc/UTC",
+              theme: "Dark",
+              style: "9",
+              locale: "en",
+              toolbar_bg: "#f1f3f6",
+              enable_publishing: false,
+              hide_side_toolbar: false,
+              allow_symbol_change: true,
+              calendar: true,
+              studies: ["BB@tv-basicstudies"],
+              container_id: "tradingview_f933e",
+            });
+          </script>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="white-box" style="height: 450px">
+          <h4 style="margin-bottom: 5px">Forex Market Fundamental Data</h4>
+          <!-- TradingView Widget BEGIN -->
+
+          <span id="tradingview-copyright"
+            ><a
+              ref="nofollow noopener"
+              target="_blank"
+              href="http://www.tradingview.com"
+              style="
+                color: rgb(173, 174, 176);
+                font-family: 'Trebuchet MS', Tahoma, Arial, sans-serif;
+                font-size: 13px;
+              "
+            ></a
+          ></span>
+          <script
+            src="https://s3.tradingview.com/external-embedding/embed-widget-forex-cross-rates.js"
+          >
+            {
+            "currencies": [
+            "EUR",
+            "USD",
+            "JPY",
+            "BTC",
+            "ETH",
+            "LTC",
+            "GBP",
+            "CHF",
+            "AUD",
+            "CAD",
+            "NZD",
+            "CNY"
+            ],
+            "width": "100%",
+            "height": "100%",
+            "colorTheme": "dark",
+            "locale": "en"
+            }
+          </script>
+        </div>
+
+        <!-- TradingView Widget END -->
       </div>
       <!-- TradingView Widget END -->
+      <% } %>
 
       <!--===================== Footer ========================-->
       <footer>

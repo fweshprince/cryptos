@@ -18,6 +18,7 @@ const {
 const cloudinary = require("cloudinary");
 const multer = require("multer");
 const Deposit = require("../models/Deposit");
+const Kycupload = require("../models/Kyc");
 require("dotenv").config();
 
 var storage = multer.diskStorage({
@@ -63,6 +64,16 @@ router.post("/deposit", upload.single("image"), async (req, res, next) => {
     publicId: result.public_id,
   };
   await Deposit.create(obj);
+  return res.redirect("/activePlans");
+});
+router.post("/kycupload", upload.single("image"), async (req, res, next) => {
+  const result = await cloudinary.uploader.upload(req.file.path);
+  const obj = {
+    ...req.body,
+    imagePath: result.secure_url,
+    publicId: result.public_id,
+  };
+  await Kycupload.create(obj);
   return res.redirect("/activePlans");
 });
 
