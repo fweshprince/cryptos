@@ -133,21 +133,25 @@
             <div class="col-xl-8 col-lg-8 col-12 pr-lg-0">
               <div class="bg">
                 <h4>Send us a Message</h4>
-                <form class="custom-form">
+                <form class="custom-form" action="contact" method="POST">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Your Name</label>
                     <input
                       type="text"
                       class="form-control"
                       id="exampleInputEmail1"
+                      name="name"
+                      required
                     />
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail2">Email Address</label>
                     <input
-                      type="text"
+                      type="email"
                       class="form-control"
                       id="exampleInputEmail2"
+                      name="email"
+                      required
                     />
                   </div>
                   <div class="form-group">
@@ -156,19 +160,14 @@
                       type="text"
                       class="form-control"
                       id="exampleInputEmail3"
+                      name="phoneNumber"
+                      required
                     />
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail4">Company</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="exampleInputEmail4"
-                    />
-                  </div>
+
                   <div class="form-group last">
-                    <label for="exampleInputEmail1">Massage</label>
-                    <textarea name="massage"></textarea>
+                    <label for="exampleInputEmail1">Message</label>
+                    <textarea name="message" required></textarea>
                   </div>
                   <div class="text-right">
                     <button type="submit" class="see-brd-btn">Send</button>
@@ -183,16 +182,16 @@
                   <li class="d-flex align-items-center">
                     <img src="assets/img/map-marker.svg" alt="" />
                     <div>
-                      <span>360 King Street Feastervile Trevose, Pa 19053</span>
+                      <span>638 rue Principale, Amos, Quebec</span>
                     </div>
                   </li>
                   <li class="d-flex align-items-center">
                     <img src="assets/img/phone.svg" alt="phone" />
-                    <span>+44 765 867 87</span>
+                    <span>+1 647 495 6063</span>
                   </li>
                   <li class="d-flex align-items-center">
                     <img src="assets/img/email.svg" alt="email" />
-                    <span><a href="#">info@Cryptocurrency.com</a></span>
+                    <span><a href="#">support@capitalreturnsinc.com</a></span>
                   </li>
                 </ul>
                 <div class="footer-social-wrapper">
@@ -306,7 +305,7 @@
             <div class="col-xl-2 col-lg-3 col-md-6 col-12">
               <h4 class="title">Contact</h4>
               <ul class="list-unstyled">
-                <li><a href="#">info@Cryptocurrency.com</a></li>
+                <li><a href="#">support@capitalreturnsinc.com</a></li>
                 <li>+1 647 495 6063</li>
               </ul>
             </div>

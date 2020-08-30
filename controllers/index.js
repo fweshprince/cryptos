@@ -4,6 +4,7 @@ const Deposit = require("../models/Deposit");
 const Investment = require("../models/Investment");
 const Kycupload = require("../models/Kyc");
 const User = require("../models/User");
+const Contact = require("../models/Contact");
 // @desc Render about page
 // @access public
 exports.about = (req, res, next) => {
@@ -93,4 +94,10 @@ exports.userinvest = asyncHandler(async (req, res, next) => {
   await user.save();
   await Investment.create(obj);
   return res.redirect("/activePlans");
+});
+// @desc Submit contact us form
+// @access public
+exports.submitContact = asyncHandler(async (req, res, next) => {
+  await Contact.create(req.body);
+  res.redirect("/");
 });
