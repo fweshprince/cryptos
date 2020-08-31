@@ -12,7 +12,7 @@ const InvestmentSchema = new Schema(
     },
     duration: {
       type: String,
-      default: "One week",
+      default: "Three weeks",
     },
     amountInvested: {
       type: Number,
