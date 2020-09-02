@@ -326,7 +326,7 @@
           margin: 20px auto;
         "
       >
-        <h3>Deposits</h3>
+        <h3 style="font-size: 1.8em">Deposits</h3>
         <% if(deposits.length > 0) { %>
         <table id="table">
           <thead>
@@ -365,12 +365,12 @@
           margin: 20px auto;
         "
       >
-        <h3>My investments</h3>
+        <h3 style="font-size: 1.8em">My investments</h3>
         <% if(investments.length > 0) { %>
         <table id="table">
           <thead>
             <tr>
-              <td><b class="name">Name</b></td>
+              <td><b class="name">Plan</b></td>
               <td><b class="name">Amount</b></td>
               <td><b class="name">Status</b></td>
               <td><b class="name">Duration</b></td>
@@ -397,7 +397,44 @@
         </div>
         <% } %>
       </div>
-
+      <div
+        class="container-fluid animatedParent"
+        style="
+          background-color: #3a3864;
+          border-radius: 10px;
+          width: 90%;
+          padding: 10px;
+          margin: 20px auto;
+        "
+      >
+        <h3 style="font-size: 1.8em">Withdrawal requests</h3>
+        <% if(withdrawals.length > 0) { %>
+        <table id="table">
+          <thead>
+            <tr>
+              <td><b class="name">Amount</b></td>
+              <td><b class="name">Status</b></td>
+              <td><b class="name">Payment Mode</b></td>
+              <td><b class="name">Date</b></td>
+            </tr>
+          </thead>
+          <tbody>
+            <% withdrawals.forEach((withdrawal)=>{ %>
+            <tr>
+              <td><%=`$${withdrawal.amountRequested}`%></td>
+              <td><%=`${withdrawal.status}`%></td>
+              <td><%=`${withdrawal.paymentMode}`%></td>
+              <td><%= withdrawal.createdAt.toString().slice(0,15) %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+        <% } else { %>
+        <div style="background-color: cornsilk">
+          <h4>You have no withdrawal requests yet</h4>
+        </div>
+        <% } %>
+      </div>
       <% if(investments.length > 0) { %>
       <div class="container">
         <div

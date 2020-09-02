@@ -1,28 +1,33 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
-const WithdrawalSchema = new Schema({
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const WithdrawalSchema = new Schema(
+  {
     user: {
-        type: mongoose.Schema.ObjectId,
-        ref: "User"
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
     },
     amountRequested: {
-        type: Number
+      type: Number,
     },
     amountWithCharge: {
-        type: Number
+      type: Number,
     },
     status: {
-        type: String,
-        default: pending,
-        enum: ['pending', 'processed']
+      type: String,
+      default: "pending",
+      enum: ["pending", "processed"],
     },
     paymentMode: {
-        type: String
+      type: String,
+      default: "bitcoin",
     },
-}, 
-{timestamps: true}
-)
+    bitcoinAddress: {
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
 
-const Withdrawal = mongoose.model("Withdrawal", WithdrawalSchema)
+const Withdrawal = mongoose.model("Withdrawal", WithdrawalSchema);
 
-module.exports = Withdrawal
+module.exports = Withdrawal;

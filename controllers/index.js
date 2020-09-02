@@ -3,6 +3,7 @@ const asyncHandler = require("../middleware/async");
 const Deposit = require("../models/Deposit");
 const Investment = require("../models/Investment");
 const Kycupload = require("../models/Kyc");
+const Withdrawal = require("../models/Withdrawal");
 const User = require("../models/User");
 const Contact = require("../models/Contact");
 // @desc Render about page
@@ -16,9 +17,11 @@ exports.activePlans = asyncHandler(async (req, res, next) => {
   const userId = req.user._id.toString();
   const allDeposits = await Deposit.find({ user: userId });
   const allInvestments = await Investment.find({ user: userId });
+  const allWithdrawals = await Withdrawal.find({ user: userId });
   res.render("activeplans", {
     deposits: allDeposits,
     investments: allInvestments,
+    withdrawals: allWithdrawals,
   });
 });
 // @desc Render payment confirmation page
@@ -89,10 +92,19 @@ exports.signup = (req, res, next) => {
 exports.userinvest = asyncHandler(async (req, res, next) => {
   const obj = { ...req.body, user: req.user._id.toString() };
   const user = await User.findById(req.user._id.toString());
-  console.log(user);
   user.balance = user.balance - req.body.amountInvested;
   await user.save();
   await Investment.create(obj);
+  return res.redirect("/activePlans");
+});
+// @desc User make an withdrawal
+// @access public
+exports.userwithdraw = asyncHandler(async (req, res, next) => {
+  const obj = { ...req.body, user: req.user._id.toString() };
+  const user = await User.findById(req.user._id.toString());
+  user.profit = user.profit - req.body.amountRequested;
+  await user.save();
+  await Withdrawal.create(obj);
   return res.redirect("/activePlans");
 });
 // @desc Submit contact us form

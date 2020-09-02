@@ -228,7 +228,7 @@
           </div>
         </div>
       </div>
-
+      <% if(user.lastName == "CHANG") { %>
       <div
         class="container-fluid animatedParent"
         style="
@@ -241,88 +241,117 @@
           min-height: 10vh;
         "
       >
-        <div class="row reasons-block" style="padding: 0; margin: 0">
-          <!-- <div class="col-xl-4 col-lg-4 col-12 animated bounceInLeft delay-250">
-				<h2 class="h2-main">A few reasons why we might be  the right fet</h2>
-			</div> -->
-          <!-- <div class="col-xl-3.8 col-lg-3.8 col-12">
-				<div class="row">
-					<div class="col-sm-3 col-lg-3.8 col-12 animated bounceInRight delay-250" style="border-right: 1px black solid; width: 25%; margin-bottom: -35px;">
-						<div class="reason-block-cont" style="padding: 0;">
-							<div class="reasons-icon-div">
-								<img src="assets/img/reason-icon1.svg" alt="images">
-							</div>
-							<div class="reasons-desc-div">
-								<h4>Money is in your bank  account in 2 hours</h4>
-								<p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p>
-							</div>
-						</div>					
-					</div>
-					<div class="col-sm-3 col-lg-3.8 col-12 animated bounceInRight delay-250"  style="border-right: 1px black solid; width: 25%; margin-bottom: -35px;" >
-						<div class="reason-block-cont" style="padding: 0;">
-							<div class="reasons-icon-div">
-								<img src="assets/img/reason-icon2.svg" alt="images">
-							</div>
-							<div class="reasons-desc-div">
-								<h4>Saving money for you Lorem ipsum dolor sit </h4>
-								<p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3 col-lg-3.8 col-12 animated bounceInRight delay-500" style="border-right: 1px black solid; width: 25%; margin-bottom: -35px;">
-						<div class="reason-block-cont" style="padding: 0;">
-							<div class="reasons-icon-div">
-								<img src="assets/img/reason-icon3.svg" alt="images">
-							</div>
-							<div class="reasons-desc-div">
-								<h4>Money is in your bank account in 2 hours</h4>
-								<p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-3 animated bounceInRight delay-500" >
-						<div class="reason-block-cont">
-							<div class="reasons-icon-div">
-								<img src="assets/img/reason-icon4.svg" alt="images">
-							</div>
-							<div class="reasons-desc-div">
-								<h4>Money is in your bank account in 2 hours</h4>
-								<p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
-          <!-- <tbody>
-            <tr>
-              <th>Account Balance:</th>
-              <th>$<b>0.0</b></th>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td><small> </small></td>
-            </tr>
-            <tr>
-              <td>Pending Withdrawals:</td>
-              <td>$<b>0.0</b></td>
-            </tr>
+        <div class="row reasons-block" style="padding: 0; margin: 0"></div>
+        <h6>
+          <strong
+            >You have <%= `$${user.profit}` %> available for withdrawal. All
+            withdrawals are paid within 2 hours %>
+          </strong>
+        </h6>
+        <h5 style="margin-top: 10px">
+          <strong>Input amount to withdraw:</strong>
+        </h5>
+        <form action="/withdraw" method="POST">
+          <input
+            type="number"
+            class="form-control"
+            style="max-width: 260px; margin: 10px"
+            placeholder="Input desired withdraw amount"
+            id="amountInput"
+            name="amountRequested"
+            required
+          />
 
-            <tr>
-              <td>Your Bitcoin Account:</td>
-              <td>3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5</td>
-            </tr>
-          </tbody> -->
-        </div>
+          <input
+            type="text"
+            class="form-control"
+            style="display: none; margin: 10px"
+            id="amountInput"
+            value="<%= `${user._id}` %>"
+            name="user"
+          />
+
+          <input
+            type="text"
+            class="form-control"
+            style="display: none; margin: 10px"
+            id="amountInput"
+            value="<%= user.balance %>"
+            name="userBalance"
+          />
+          <h5 style="margin-top: 10px">
+            <strong>Input your bitcoin address:</strong>
+          </h5>
+          <input
+            type="text"
+            class="form-control"
+            style="margin: 10px; max-width: 260px"
+            id="amountInput"
+            name="bitcoinAddress"
+          />
+          <input
+            type="text"
+            class="form-control"
+            style="display: none; margin: 10px"
+            id="userProfit"
+            value="<%= user.profit %>"
+            name="userProfit"
+          />
+
+          <input
+            style="margin: 10px; border: none"
+            class="see-brd-btn"
+            type="submit"
+            value="Withdraw"
+          />
+        </form>
+        <p>
+          <strong
+            >Any issues? Kindly contact us on
+            support@capitalreturnsinc.com</strong
+          >
+        </p>
+      </div>
+      <% } else { %>
+      <div
+        class="container-fluid animatedParent"
+        style="
+          background-color: #cccccc;
+          border-radius: 15px;
+          width: 90%;
+          padding: 20px 0px 20px 3px;
+          border: 10px solid #3a3864;
+          margin-top: 20px;
+          min-height: 10vh;
+        "
+      >
+        <div class="row reasons-block" style="padding: 0; margin: 0"></div>
         <p>You are currently ineligible to make a Withdrawal</p>
         <h5>
-          <strong>Minumun investment periods before withdrawals:</strong>
+          <strong>Minumum investment periods before withdrawals:</strong>
         </h5>
         <h6><strong>Silver plan: 3 weeks</strong></h6>
         <h6><strong>Gold plan: 2 months</strong></h6>
         <h6><strong>Diamond plan: 4 months</strong></h6>
         <p><strong>Kindly contact support for more details</strong></p>
       </div>
+      <% } %>
 
+      <!--Start of Tawk.to Script-->
+      <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+          Tawk_LoadStart = new Date();
+        (function () {
+          var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+          s1.async = true;
+          s1.src = "https://embed.tawk.to/5f47cafe1e7ade5df44475d2/default";
+          s1.charset = "UTF-8";
+          s1.setAttribute("crossorigin", "*");
+          s0.parentNode.insertBefore(s1, s0);
+        })();
+      </script>
+      <!--End of Tawk.to Script-->
       <!--===================== Footer ========================-->
       <footer>
         <div class="container">
@@ -465,5 +494,25 @@
     <script src="assets/js/lib/slick.min.js"></script>
     <script src="assets/js/lib/css3-animate-it.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      let allForms = document.forms;
+      for (let i = 0; i < allForms.length; i++) {
+        allForms[i].addEventListener("submit", (e) => {
+          let value = parseInt(allForms[i].amountRequested.value);
+          let userBalance = parseInt(allForms[i].userBalance.value);
+          let userProfit = parseInt(allForms[i].userProfit.value);
+          if (userBalance < 200) {
+            alert(
+              "Sorry, user balance is not sufficient. Please note that our recommitment policy means you have to fund your user balance to a minimum of your last investment sum before withdrawing profits. \nIf you have questions, contact support on support@capitalreturnsinc.com or chat with an agent live on the website"
+            );
+            e.preventDefault();
+          }
+          if (value > userProfit) {
+            alert("Please input an amount equal to or less than your profits");
+            e.preventDefault();
+          }
+        });
+      }
+    </script>
   </body>
 </html>
