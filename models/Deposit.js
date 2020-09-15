@@ -6,13 +6,16 @@ const DepositSchema = new Schema(
       type: mongoose.Schema.ObjectId,
       ref: "User",
     },
+    username: {
+      type: String,
+    },
     amount: {
       type: Number,
     },
     status: {
       type: String,
-      default: "pending",
-      enum: ["pending", "processed"],
+      default: "Pending",
+      enum: ["Pending", "Confirmed"],
     },
     paymentMode: {
       type: String,

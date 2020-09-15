@@ -52,6 +52,15 @@ const UserSchema = new Schema(
       type: Number,
       default: 0,
     },
+    referrer: {
+      type: String,
+    },
+    bitcoinAddress: {
+      type: String,
+    },
+    phoneNumber: {
+      type: String,
+    },
     refBonus: {
       type: Number,
       default: 0,

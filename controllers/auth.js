@@ -20,7 +20,11 @@ exports.showlogin = asyncHandler(async (req, res, next) => {
 // @desc Renders signup page
 // @access public
 exports.showsignup = asyncHandler(async (req, res, next) => {
-  res.render("sign-up", { message: "" });
+  if (req.query.referrer) {
+    res.render("sign-up", { referrer: req.query.referrer });
+  } else {
+    res.render("sign-up", { referrer: "" });
+  }
 });
 // @desc Renders index page
 // @access public
@@ -46,13 +50,25 @@ exports.showfaq = asyncHandler(async (req, res, next) => {
 // @desc Registers a user
 // @access public
 exports.signup = asyncHandler(async (req, res, next) => {
-  const { firstName, lastName, email, password, username } = req.body;
+  const {
+    firstName,
+    lastName,
+    email,
+    password,
+    username,
+    bitcoinAddress,
+    phoneNumber,
+    referrer,
+  } = req.body;
   const user = await User.create({
     firstName,
     lastName,
     email,
     password,
     username,
+    bitcoinAddress,
+    phoneNumber,
+    referrer,
   });
   req.login(user, function (err) {
     if (err) {

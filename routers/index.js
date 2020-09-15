@@ -21,6 +21,7 @@ const cloudinary = require("cloudinary");
 const multer = require("multer");
 const Deposit = require("../models/Deposit");
 const Kycupload = require("../models/Kyc");
+const User = require("../models/User");
 require("dotenv").config();
 
 var storage = multer.diskStorage({
@@ -64,9 +65,19 @@ router.post("/deposit", upload.single("image"), async (req, res, next) => {
   const result = await cloudinary.uploader.upload(req.file.path);
   const obj = {
     ...req.body,
+    userName: req.user.userName,
     imagePath: result.secure_url,
     publicId: result.public_id,
   };
+  if (req.user.referrer != "") {
+    const referrer = await User.findOne({ username: req.user.referrer });
+    if (!referrer) {
+      await Deposit.create(obj);
+      return res.redirect("/activePlans");
+    }
+    referrer.refBonus += req.body.amount * 0.1;
+    await referrer.save();
+  }
   await Deposit.create(obj);
   return res.redirect("/activePlans");
 });

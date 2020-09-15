@@ -228,11 +228,11 @@
       <form encType="multipart/form-data" action="/deposit" method="POST">
 
         <div className="form-group" style="margin-top: 15px; margin: 10px;">
-          <input type="file" class="parcel-img" id="parcel-img" name="image" />
+          <input type="file" class="parcel-img" id="parcel-img" name="image" required />
         </div>
 
         <input type="number" class="form-control" style="max-width: 200px; margin: 10px;"
-          placeholder="Input amount sent" id="amountInput" name="amount">
+          placeholder="Input amount sent" id="amountInput" name="amount" required>
 
         <input type="text" class="form-control" style="display: none; margin: 10px;" id="amountInput"
           value="<%= `${user._id}` %>" name="user">

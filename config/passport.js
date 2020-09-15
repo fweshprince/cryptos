@@ -10,7 +10,6 @@ module.exports = function (passport) {
         const user = await User.findOne({ email: username }).select(
           "+password"
         );
-        console.log(user);
         if (!user) {
           return done(null, false);
         }

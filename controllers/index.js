@@ -85,7 +85,11 @@ exports.rules = (req, res, next) => {
 // @desc Render signup page
 // @access public
 exports.signup = (req, res, next) => {
-  res.render("sign-up", { message: "" });
+  if (req.query.referrer) {
+    res.render("sign-up", { referrer: req.query.referrer });
+  } else {
+    res.render("sign-up", { referrer: "" });
+  }
 };
 // @desc User make an investment
 // @access public
