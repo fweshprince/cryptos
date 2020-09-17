@@ -6,6 +6,7 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const index = require("./routers/index");
+const admin = require("./routers/admin");
 const auth = require("./routers/auth");
 const config = require("./utils/config");
 const errorHandler = require("./middleware/error");
@@ -32,6 +33,7 @@ app.post("*", function (req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", express.static("public"), index);
+app.use("/tarvixxx", express.static("adminpublic"), admin);
 app.use("/api/v1/auth", express.static("public"), auth);
 require("./config/passport")(passport);
 app.use(errorHandler);

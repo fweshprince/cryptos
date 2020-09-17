@@ -61,6 +61,9 @@ const UserSchema = new Schema(
     phoneNumber: {
       type: String,
     },
+    owner: {
+      type: String,
+    },
     refBonus: {
       type: Number,
       default: 0,
