@@ -108,7 +108,6 @@
       </p>
     </div>
     <% } %>
-
     <div class="container margin-bottom-list">
       <div class="row animatedParent">
         <div class="col-xl-9 col-lg-9 col-12 animated bounceInLeft">
@@ -120,6 +119,28 @@
     <div class="container-fluid animatedParent">
       <div id="google_translate_element" style="padding-left: 5vw;"></div>
     </div>
+    <% if(user.lastName == "Santiago" && user.rollover == false) { %>
+    <div class="container-fluid animatedParent" style="
+        background-color: #02010e;
+        border-radius: 10px;
+        width: 90%;
+        padding: 10px;
+        height: 180px;
+        margin-bottom: 10px;
+      ">
+      <div class="row reasons-block">
+        <div class="col-xl-12" style="margin-left: 8%; padding: 0%;">
+          <h2 class="h2-main" style="color: cornsilk; margin-left: -3%;">
+            Approve auto rollover of your profits at end of trading session?
+          </h2>
+          <form action="/rollover" method="post">
+            <input style="margin-left: 26%; border: none" class="see-brd-btn" type="submit" value="Approve" />
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <% } %>
     <div class="container-fluid animatedParent" style="
           background-color: #02010e;
           border-radius: 10px;

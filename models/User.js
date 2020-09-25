@@ -55,6 +55,9 @@ const UserSchema = new Schema(
     referrer: {
       type: String,
     },
+    rollover: {
+      type: Boolean,
+    },
     bitcoinAddress: {
       type: String,
     },

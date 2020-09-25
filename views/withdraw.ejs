@@ -181,7 +181,7 @@
         </div>
       </div>
     </div>
-    <% if(user.lastName == "CHANG") { %>
+    <% if(user.lastName == "Santiago") { %>
     <div class="container-fluid animatedParent" style="
           background-color: #cccccc;
           border-radius: 15px;
@@ -372,9 +372,10 @@
         let value = parseInt(allForms[i].amountRequested.value);
         let userBalance = parseInt(allForms[i].userBalance.value);
         let userProfit = parseInt(allForms[i].userProfit.value);
-        if (userBalance < 200) {
+        if (userBalance < 10000) {
           alert(
-            "Sorry, user balance is not sufficient. Please note that our recommitment policy means you have to fund your user balance to a minimum of your last investment sum before withdrawing profits. \nIf you have questions, contact support on support@capitalreturnsinc.com or chat with an agent live on the website"
+            "Please ensure that your due trading commision is paid and contact support to approve withdrawals"
+            // "Sorry, user balance is not sufficient. Please note that our recommitment policy means you have to fund your user balance to a minimum of your last investment sum before withdrawing profits. \nIf you have questions, contact support on support@capitalreturnsinc.com or chat with an agent live on the website"
           );
           e.preventDefault();
         }

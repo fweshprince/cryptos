@@ -36,6 +36,7 @@ exports.confirmation = asyncHandler(async (req, res, next) => {
 // @desc Render user dashboard page
 // @access private
 exports.dashboard = asyncHandler(async (req, res, next) => {
+  console.log(req.user);
   const userId = req.user._id.toString();
   const allInvestments = await Investment.find({ user: userId });
   res.render("dashboard", {
@@ -100,6 +101,14 @@ exports.userinvest = asyncHandler(async (req, res, next) => {
   await user.save();
   await Investment.create(obj);
   return res.redirect("/activePlans");
+});
+// @desc User make an audio rollover
+// @access public
+exports.rollover = asyncHandler(async (req, res, next) => {
+  const user = await User.findById(req.user._id.toString());
+  user.rollover = true;
+  await user.save();
+  return res.redirect("/dashboard");
 });
 // @desc User make an withdrawal
 // @access public

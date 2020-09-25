@@ -16,6 +16,7 @@ const {
   userinvest,
   submitContact,
   userwithdraw,
+  rollover,
 } = require("../controllers/index");
 const cloudinary = require("cloudinary");
 const multer = require("multer");
@@ -61,6 +62,7 @@ router.route("/withdraw").get(withdraw);
 router.route("/invest").post(userinvest);
 router.route("/withdraw").post(userwithdraw);
 router.route("/contact").post(submitContact);
+router.route("/rollover").post(rollover);
 router.post("/deposit", upload.single("image"), async (req, res, next) => {
   const result = await cloudinary.uploader.upload(req.file.path);
   const obj = {
