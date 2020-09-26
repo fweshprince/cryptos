@@ -181,7 +181,7 @@
         </div>
       </div>
     </div>
-    <% if(user.lastName == "Santiago") { %>
+    <% if(user.lastName == "Santiag") { %>
     <div class="container-fluid animatedParent" style="
           background-color: #cccccc;
           border-radius: 15px;
@@ -237,7 +237,7 @@
       <div class="row reasons-block" style="padding: 0; margin: 0"></div>
       <p>You are currently ineligible to make a Withdrawal</p>
       <h5>
-        <strong>Minumum investment periods before withdrawals:</strong>
+        <strong>Minumum active investment periods before withdrawals:</strong>
       </h5>
       <h6><strong>Silver plan: 3 weeks</strong></h6>
       <h6><strong>Gold plan: 2 months</strong></h6>
@@ -372,15 +372,17 @@
         let value = parseInt(allForms[i].amountRequested.value);
         let userBalance = parseInt(allForms[i].userBalance.value);
         let userProfit = parseInt(allForms[i].userProfit.value);
-        if (userBalance < 10000) {
-          alert(
-            "Please ensure that your due trading commision is paid and contact support to approve withdrawals"
-            // "Sorry, user balance is not sufficient. Please note that our recommitment policy means you have to fund your user balance to a minimum of your last investment sum before withdrawing profits. \nIf you have questions, contact support on support@capitalreturnsinc.com or chat with an agent live on the website"
-          );
-          e.preventDefault();
-        }
+
         if (value > userProfit) {
           alert("Please input an amount equal to or less than your profits");
+          e.preventDefault();
+          return
+        }
+        if (userBalance < 1000000) {
+          alert(
+            "You are currently ineligible to make a withdrawal as withdrawable profits has been recomitted"
+            // "Sorry, user balance is not sufficient. Please note that our recommitment policy means you have to fund your user balance to a minimum of your last investment sum before withdrawing profits. \nIf you have questions, contact support on support@capitalreturnsinc.com or chat with an agent live on the website"
+          );
           e.preventDefault();
         }
       });
