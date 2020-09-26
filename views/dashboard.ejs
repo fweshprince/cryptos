@@ -141,12 +141,13 @@
       </div>
     </div>
     <% } %>
+    <% if(user.rollover != false) { %>
     <div class="container-fluid animatedParent" style="
-          background-color: #02010e;
-          border-radius: 10px;
-          width: 90%;
-          padding: 10px;
-        ">
+      background-color: #02010e;
+      border-radius: 10px;
+      width: 90%;
+      padding: 10px;
+    ">
       <div class="row reasons-block">
         <div class="col-xl-4 col-lg-4 col-12 animated bounceInLeft delay-250">
           <h2 class="h2-main" style="color: cornsilk">
@@ -158,11 +159,11 @@
             <div class="col-sm-6 animated bounceInRight delay-250">
               <a href="activeplans">
                 <div class="reason-block-cont" style="
-                      background-color: #0c0b20;
-                      padding: 10px;
-                      margin: 0;
-                      margin-bottom: 10px;
-                    ">
+                  background-color: #0c0b20;
+                  padding: 10px;
+                  margin: 0;
+                  margin-bottom: 10px;
+                ">
                   <div class="reasons-icon-div">
                     <img src="assets/img/reason-icon1.svg" alt="images" />
                   </div>
@@ -175,11 +176,11 @@
             <div class="col-sm-6 animated bounceInRight delay-250">
               <a href="deposit">
                 <div class="reason-block-cont" style="
-                      background-color: #0c0b20;
-                      padding: 10px;
-                      margin: 0;
-                      margin-bottom: 10px;
-                    ">
+                  background-color: #0c0b20;
+                  padding: 10px;
+                  margin: 0;
+                  margin-bottom: 10px;
+                ">
                   <div class="reasons-icon-div">
                     <img src="assets/img/reason-icon2.svg" alt="images" />
                   </div>
@@ -193,11 +194,11 @@
             <div class="col-sm-6 animated bounceInRight delay-500">
               <a href="invest">
                 <div class="reason-block-cont" style="
-                      background-color: #0c0b20;
-                      padding: 10px;
-                      margin: 0;
-                      margin-bottom: 10px;
-                    ">
+                  background-color: #0c0b20;
+                  padding: 10px;
+                  margin: 0;
+                  margin-bottom: 10px;
+                ">
                   <div class="reasons-icon-div">
                     <img src="assets/img/reason-icon3.svg" alt="images" />
                   </div>
@@ -211,11 +212,11 @@
             <div class="col-sm-6 animated bounceInRight delay-500">
               <a href="withdraw">
                 <div class="reason-block-cont" style="
-                      background-color: #0c0b20;
-                      padding: 10px;
-                      margin: 0;
-                      margin-bottom: 10px;
-                    ">
+                  background-color: #0c0b20;
+                  padding: 10px;
+                  margin: 0;
+                  margin-bottom: 10px;
+                ">
                   <div class="reasons-icon-div">
                     <img src="assets/img/reason-icon4.svg" alt="images" />
                   </div>
@@ -232,30 +233,30 @@
     </div>
 
     <div class="container-fluid animatedParent" style="
-          background-color: #cccccc;
-          border-radius: 15px;
-          width: 90%;
-          padding: 0;
-          border: 10px solid #3a3864;
-          margin-top: 5px;
-          margin-bottom: 5vh;
-          min-height: 10vh;
-        ">
+      background-color: #cccccc;
+      border-radius: 15px;
+      width: 90%;
+      padding: 0;
+      border: 10px solid #3a3864;
+      margin-top: 5px;
+      margin-bottom: 5vh;
+      min-height: 10vh;
+    ">
       <div class="row reasons-block" style="padding: 0; margin: 0">
         <!-- <div class="col-xl-4 col-lg-4 col-12 animated bounceInLeft delay-250">
-				<h2 class="h2-main">A few reasons why we might be  the right fet</h2>
-			</div> -->
+    <h2 class="h2-main">A few reasons why we might be  the right fet</h2>
+  </div> -->
         <div class="col-xl-3.8 col-lg-3.8 col-12">
           <div class="row">
             <div class="col-sm-3 col-lg-3.8 col-12 animated bounceInRight delay-250" style="
-                  border-right: 1px black solid;
-                  width: 25%;
-                  margin-bottom: -50px;
-                ">
+              border-right: 1px black solid;
+              width: 25%;
+              margin-bottom: -50px;
+            ">
               <div class="reason-block-cont" style="padding: 0">
                 <!-- <div class="reasons-icon-div">
-								<img src="assets/img/reason-icon1.svg" alt="images">
-							</div> -->
+            <img src="assets/img/reason-icon1.svg" alt="images">
+          </div> -->
                 <div class="reasons-desc-div">
                   <h4>Deposited: <%= `$${user.deposits}` %></h4>
                   <!-- <p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
@@ -263,14 +264,14 @@
               </div>
             </div>
             <div class="col-sm-3 col-lg-3.8 col-12 animated bounceInRight delay-250" style="
-                  border-right: 1px black solid;
-                  width: 25%;
-                  margin-bottom: -50px;
-                ">
+              border-right: 1px black solid;
+              width: 25%;
+              margin-bottom: -50px;
+            ">
               <div class="reason-block-cont" style="padding: 0">
                 <!-- <div class="reasons-icon-div">
-								<img src="assets/img/reason-icon2.svg" alt="images">
-							</div> -->
+            <img src="assets/img/reason-icon2.svg" alt="images">
+          </div> -->
                 <div class="reasons-desc-div">
                   <h4>Profit: <%= `$${user.profit}` %></h4>
                   <!-- <p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
@@ -278,14 +279,14 @@
               </div>
             </div>
             <div class="col-sm-3 col-lg-3.8 col-12 animated bounceInRight delay-500" style="
-                  border-right: 1px black solid;
-                  width: 25%;
-                  margin-bottom: -50px;
-                ">
+              border-right: 1px black solid;
+              width: 25%;
+              margin-bottom: -50px;
+            ">
               <div class="reason-block-cont" style="padding: 0">
                 <!-- <div class="reasons-icon-div">
-								<img src="assets/img/reason-icon3.svg" alt="images">
-							</div> -->
+            <img src="assets/img/reason-icon3.svg" alt="images">
+          </div> -->
                 <div class="reasons-desc-div">
                   <h4>Ref Bonus: <%= `$${user.refBonus}` %></h4>
                   <!-- <p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
@@ -295,8 +296,8 @@
             <div class="col-sm-3 animated bounceInRight delay-500">
               <div class="reason-block-cont">
                 <!-- <div class="reasons-icon-div">
-								<img src="assets/img/reason-icon4.svg" alt="images">
-							</div> -->
+            <img src="assets/img/reason-icon4.svg" alt="images">
+          </div> -->
                 <div class="reasons-desc-div">
                   <h4>Balance: <%= `$${user.balance}` %></h4>
                   <!-- <p>Lorem ipsum dolor sit amet,  consectetur adipiscing elit.</p> -->
@@ -307,6 +308,8 @@
         </div>
       </div>
     </div>
+    <% } %>
+
     <!-- TradingView Widget BEGIN -->
     <!-- <div class="container" style="padding: 0px">
         <div
