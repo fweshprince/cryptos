@@ -10,6 +10,7 @@ module.exports = function(passport) {
                     "+password"
                 );
                 if (!user) {
+                    console.log("no user");
                     return done(null, false);
                 }
                 try {
