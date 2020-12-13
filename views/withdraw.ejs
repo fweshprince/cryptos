@@ -84,7 +84,7 @@
             <p style="color: white">Phone</p>
             <p style="color: white">Email</p>
           </div>
-          <p><strong>Email: support@capitalreturnsinc.com</strong></p>
+          <p><strong>Email: helpdesk@capitalreturnsupport.com</strong></p>
         </div>
       </div>
     </div>
@@ -100,7 +100,8 @@
       <div class="row reasons-block">
         <div class="col-xl-4 col-lg-4 col-12 animated bounceInLeft delay-250">
           <h2 class="h2-main" style="color: cornsilk">
-            Welcome <%= `${user.firstName}` %>
+            Welcome
+            <%= `${user.firstName}` %>
           </h2>
         </div>
         <div class="col-xl-8 col-lg-8 col-12">
@@ -270,7 +271,7 @@
       </form>
       <p>
         <strong>Any issues? Kindly contact us on
-          support@capitalreturnsinc.com</strong>
+          helpdesk@capitalreturnsupport.com</strong>
       </p>
     </div>
     <div class="container-fluid animatedParent" style="
@@ -333,7 +334,7 @@
       </form>
       <p>
         <strong>Any issues? Kindly contact us on
-          support@capitalreturnsinc.com</strong>
+          helpdesk@capitalreturnsupport.com</strong>
       </p>
     </div>
     <% } else { %>
@@ -381,14 +382,12 @@
             <div class="logo">
               <a href="/"><img src="assets/img/footer-logo.png" alt="images" /></a>
               <p>
-                We create the future. This is how we would define the main
-                activity of the company. Cryptocurrency - in particular
-                Bitcoin - the future of the global financial market. And now
-                we are engaged in the extraction of one of the most valuable
-                resources, which allows us to get maximum profits today.
-                Exchange trade in cryptocurrency is a way of converting
-                opportunities into real money. We invite everyone to join us
-                on the road to success and financial independence.
+                We create the future. This is how we would define the main activity of the company. Cryptocurrency - in
+                particular Bitcoin - the future of the global financial market. And now we are engaged in the extraction
+                of one of the most valuable resources, which
+                allows us to get maximum profits today. Exchange trade in cryptocurrency is a way of converting
+                opportunities into real money. We invite everyone to join us on the road to success and financial
+                independence.
               </p>
             </div>
           </div>
@@ -414,7 +413,7 @@
           <div class="col-xl-2 col-lg-3 col-md-6 col-12">
             <h4 class="title">Contact</h4>
             <ul class="list-unstyled">
-              <li><a href="#">support@capitalreturnsinc.com</a></li>
+              <li><a href="#">helpdesk@capitalreturnsupport.com</a></li>
             </ul>
           </div>
         </div>
@@ -492,7 +491,7 @@
         if (userBalance < 1000000) {
           alert(
             // "You are currently ineligible to make a withdrawal as withdrawable profits has been recomitted"
-            "Sorry, your trade commission is not yet paid. Please not that before withdrawing any profits, a trade commission of 10% of your total trade profits must deposited to Capital Returns blockchain wallet address. This is to ensure our traders are paid for their services. This is not an investment or deposit. \nIf you have questions, contact support on support@capitalreturnsinc.com or chat with an agent live on the website"
+            "Sorry, your trade commission is not yet paid. Please not that before withdrawing any profits, a trade commission of 10% of your total trade profits must deposited to Capital Returns blockchain wallet address. This is to ensure our traders are paid for their services. This is not an investment or deposit. \nIf you have questions, contact support on helpdesk@capitalreturnsupport.com or chat with an agent live on the website"
           );
           e.preventDefault();
         }
@@ -514,13 +513,14 @@
       document.execCommand("copy");
       $temp.remove();
     }
-
   </script>
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'en'
+      }, 'google_translate_element');
     }
   </script>
 </body>
