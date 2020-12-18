@@ -8,7 +8,7 @@ const passport = require("passport");
 exports.login = asyncHandler(async(req, res, next) => {
     passport.authenticate("local", {
         successRedirect: "/dashboard",
-        failureRedirect: "/faq",
+        failureRedirect: "/login",
         failureFlash: false,
     })(req, res, next);
 });
